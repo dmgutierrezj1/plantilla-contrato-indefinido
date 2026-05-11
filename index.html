@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato Trabajo Indefinido - CAPITAL INVESTMENTS S.A.S. 2026</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CONTRATO DE TRABAJO A TÉRMINO INDEFINIDO</h1>
+        <p>Regla General CST Art.47, Ley 2466/2025, Ley 50/1990 | SMLMV 2026: $1.750.905 + Aux $249.095 = $2.000.000 Total</p>
+    </header>
+    <main>
+        <form id="contratoForm" novalidate>
+            <section aria-labelledby="partes-h2">
+                <h2 id="partes-h2">PARTES</h2>
+                <div class="row">
+                    <div class="col">
+                        <label for="nitEmp">NIT Empleador:</label>
+                        <input type="text" id="nitEmp" value="901055873-8" required aria-required="true">
+                    </div>
+                    <div class="col">
+                        <label for="nomEmp">Empleador:</label>
+                        <input type="text" id="nomEmp" value="CAPITAL INVESTMENTS S.A.S." required>
+                    </div>
+                </div>
+                <label for="nomTrab">Trabajador Completo:</label>
+                <input type="text" id="nomTrab" required>
+                <label for="ccTrab">Tipo y Nº Documento:</label>
+                <input type="text" id="ccTrab" required>
+                <label for="dirTrab">Dirección Residencia:</label>
+                <input type="text" id="dirTrab" required>
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" placeholder="Ej: Asistente Administrativo" required>
+            </section>
+
+            <section aria-labelledby="inicio-h2">
+                <h2 id="inicio-h2">INICIO Y DURACIÓN (Indefinida)</h2>
+                <div class="row">
+                    <div class="col">
+                        <label for="fechaIni">Fecha de Inicio:</label>
+                        <input type="date" id="fechaIni" required>
+                    </div>
+                    <div class="col">
+                        <label for="periodoPrueba">Período Prueba (máx 2 meses):</label>
+                        <input type="number" id="periodoPrueba" min="0" max="60" value="0" required>
+                    </div>
+                </div>
+                <p class="nota-legal">Vigencia: Mientras subsistan causas origen (CST Art.47). Terminación: Preaviso 30 días (Ley 2466/2025)</p>
+            </section>
+
+            <section aria-labelledby="remuneracion-h2">
+                <h2 id="remuneracion-h2">REMUNERACIÓN Y JORNADA</h2>
+                <label for="salario">Salario Mensual:</label>
+                <input type="number" id="salario" min="1750905" value="1750905" step="1" required>
+                <label for="jornada">Jornada Semanal (máx 47h):</label>
+                <input type="number" id="jornada" min="1" max="47" value="40" required>
+                <p class="nota-legal">Incluye dominicales 175%. Auxilio Transporte si ≤2 SMMLV: $249.095</p>
+            </section>
+
+            <section aria-labelledby="ss-h2">
+                <h2 id="ss-h2">SEGURIDAD SOCIAL (Afiliación Inmediata Día 1)</h2>
+                <div class="row">
+                    <div class="col">
+                        <label for="eps">EPS:</label>
+                        <input type="text" id="eps" placeholder="Ej: Nueva EPS" required>
+                    </div>
+                    <div class="col">
+                        <label for="pension">Fondo Pensión:</label>
+                        <input type="text" id="pension" placeholder="Ej: Porvenir" required>
+                    </div>
+                    <div class="col">
+                        <label for="arl">ARL:</label>
+                        <input type="text" id="arl" placeholder="Ej: Colmena" required>
+                    </div>
+                </div>
+                <p class="nota-legal">Registro PILA/RUAF/SISPRO previo. Paz-salvo no deudas.</p>
+            </section>
+
+            <section aria-labelledby="prestaciones-h2">
+                <h2 id="prestaciones-h2">PRESTACIONES (Plenas)</h2>
+                <ul class="prest-list">
+                    <li>Cesantías: 8.33% anual (Jun30)</li>
+                    <li>Intereses Cesantías: 12% anual (Ene31)</li>
+                    <li>Prima: 15% semestral (Jun30/Dic13)</li>
+                    <li>Vacaciones: 15 días hábiles/año</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="checklist-h2">
+                <h2 id="checklist-h2">CHECKLIST VERIFICACIÓN LEGAL (100% Sí)</h2>
+                <table role="grid" aria-label="Checklist Contrato Indefinido">
+                    <thead><tr><th>Ítem</th><th>Sí/No</th><th>Observaciones</th></tr></thead>
+                    <tbody>
+                        <tr><td>SS Afiliada Día 1 (PILA ok)</td><td><input type="checkbox" id="chk1" aria-label="Sí SS"></td><td><input type="text" size="15" aria-label="Obs SS"></td></tr>
+                        <tr><td>Salario ≥SMLMV $1.750.905 + Aux ok</td><td><input type="checkbox" id="chk2"></td><td><input type="text" size="15"></td></tr>
+                        <tr><td>Preaviso 30d + Prestaciones Plenas</td><td><input type="checkbox" id="chk3"></td><td><input type="text" size="15"></td></tr>
+                        <tr><td>Firmas Partes + 2 Testigos</td><td><input type="checkbox" id="chk4"></td><td><input type="text" size="15"></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="clausulas" aria-labelledby="clausulas-h2">
+                <h2 id="clausulas-h2">CLÁUSULAS LEGALES FIJAS (No Modificar)</h2>
+                <div class="clausula">
+                    <p><strong>Objeto:</strong> Prestación personal servicios subordinados permanentes. <strong>Terminación:</strong> Mutuo acuerdo, justa causa o preaviso 30 días (sin sanción Ley 2466).</p>
+                    <p><strong>Confidencialidad:</strong> Reserva info 2 años post-contrato. <strong>Jurisdicción:</strong> Villavicencio, Meta. Revisión anual MinTrabajo.</p>
+                </div>
+            </section>
+        </form>
+        <button onclick="generarContratoIndefinido()" aria-label="Generar PDF">✅ Generar PDF Cumplimiento 2026</button>
+        <div id="mensaje" aria-live="polite"></div>
+    </main>
+    <footer style="text-align:center; margin-top:40px; color:#7f8c8d; padding:20px; background:rgba(52,152,219,0.1); border-radius:12px;">
+        Plantilla CAPITAL INVESTMENTS S.A.S. | Mayo 2026 | Verificar Abogado Interno
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

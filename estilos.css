@@ -1,0 +1,39 @@
+:root {
+    --primary: #3c3fe7; /* Azul indefinido prioritario */
+    --secondary: #3c3fe7;
+    --bg: linear-gradient(135deg, #ebf3fd 0%, #b3d4fc 100%);
+    --shadow: 0 4px 12px rgba(52,152,219,0.25);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', -apple-system, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px; background: var(--bg); line-height: 1.7; color: #2c3e50; }
+header { text-align: center; background: var(--primary); color: white; padding: 28px; border-radius: var(--border-radius); margin-bottom: 32px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+header::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: rgba(255,255,255,0.1); transform: rotate(30deg); }
+h1 { font-size: 2.1em; margin-bottom: 12px; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); position: relative; z-index: 1; }
+h2 { color: var(--secondary); border-bottom: 4px solid var(--primary); padding-bottom: 14px; margin: 32px 0 24px; font-size: 1.5em; display: flex; align-items: center; gap: 12px; }
+h2::before { content: '📋'; font-size: 1.2em; }
+label { display: block; margin: 20px 0 8px; font-weight: 600; color: #34495e; font-size: 1.1em; }
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 24px; }
+.col { position: relative; }
+.col input, .col select { width: 100%; padding: 16px; border: 2px solid #e1e8ed; border-radius: 10px; font-size: 16px; transition: var(--transition); background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.col input:focus, .col select:focus { border-color: var(--primary); box-shadow: 0 0 20px rgba(52,152,219,0.3), 0 4px 12px rgba(52,152,219,0.2); transform: translateY(-3px); outline: none; }
+.nota-legal { background: #d1ecf1; border: 1px solid #bee5eb; padding: 18px; border-radius: 10px; margin: 20px 0; font-size: 0.95em; color: #0c5460; position: relative; }
+.nota-legal::before { content: '⚠️'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 1.2em; }
+.prest-list { background: #f8f9ff; padding: 20px; border-radius: 10px; list-style: none; }
+.prest-list li { padding: 8px 0; border-left: 4px solid var(--primary); padding-left: 16px; margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; margin: 28px 0; background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); }
+th { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 20px; text-align: left; font-weight: 600; font-size: 1.05em; }
+td { padding: 20px; border-bottom: 1px solid #f1f3f4; vertical-align: top; }
+input[type="checkbox"] { transform: scale(1.4); margin-right: 12px; accent-color: var(--primary); cursor: pointer; }
+.clausulas .clausula { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left: 6px solid var(--primary); padding: 28px; margin: 32px 0; border-radius: var(--border-radius); box-shadow: inset 0 3px 8px rgba(0,0,0,0.05); font-size: 1.02em; line-height: 1.8; }
+button { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 20px 48px; border: none; border-radius: 50px; font-size: 1.3em; font-weight: 700; cursor: pointer; transition: var(--transition); box-shadow: var(--shadow); display: block; margin: 48px auto 0; position: relative; overflow: hidden; }
+button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
+button:hover::before { left: 100%; }
+button:hover, button:focus { transform: translateY(-5px) scale(1.02); box-shadow: 0 12px 30px rgba(52,152,219,0.45); outline: 3px solid rgba(52,152,219,0.5); }
+button:active { transform: translateY(-2px); }
+#mensaje { padding: 24px; margin: 32px 0; border-radius: 12px; text-align: center; font-weight: 700; font-size: 1.1em; display: none; box-shadow: var(--shadow); min-height: 60px; display: flex; align-items: center; justify-content: center; }
+footer { margin-top: 60px; padding: 24px; background: rgba(52,152,219,0.08); border-radius: var(--border-radius); border-top: 3px solid var(--primary); }
+@media (max-width: 768px) { .row { grid-template-columns: 1fr; gap: 16px; } body { padding: 16px; } input { padding: 20px; font-size: 18px; } h1 { font-size: 1.7em; } }
+@media (max-width: 480px) { h2 { font-size: 1.3em; } button { padding: 18px 32px; font-size: 1.1em; } }
